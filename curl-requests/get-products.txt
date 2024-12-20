@@ -1,0 +1,4 @@
+curl --request GET \
+  --url 'http://localhost:8080/api/products/all?page=0&size=2' \
+  --header 'User-Agent: insomnia/2023.5.8' \
+  --header 'api-token: test'

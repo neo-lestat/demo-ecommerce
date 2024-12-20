@@ -1,0 +1,4 @@
+rootProject.name = 'demo-ecommerce'
+include 'ecommerce'
+include 'payment-gateway'
+

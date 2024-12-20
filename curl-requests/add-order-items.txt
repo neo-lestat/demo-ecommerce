@@ -1,0 +1,16 @@
+curl --request POST \
+  --url http://localhost:8080/api/orders/update \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/2023.5.8' \
+  --header 'api-token: test' \
+  --data '{
+
+	"email": "test@test.com",
+  "id": 1,
+  "products": [
+		{
+			"productId": 1,
+			"quantity": 1
+		}
+	]
+}'

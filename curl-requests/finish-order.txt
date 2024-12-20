@@ -1,0 +1,12 @@
+curl --request PUT \
+  --url http://localhost:8080/api/orders/finish \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/2023.5.8' \
+  --header 'api-token: test' \
+  --data '{
+  "id": 1,
+  "paymentStatus": "DONE",
+  "paymentCardToken": "397ede27-5ed3-4a36-800b-8a7fa05c7e4e",
+  "paymentGateway": "payment-gateway-mock",
+  "paymentDate": "2024-12-06T19:12:53Z"
+}'

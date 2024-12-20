@@ -1,0 +1,19 @@
+#file to init postgresql docker
+networks:
+  demo-ecommerce-net:
+    driver: bridge
+
+services:
+  postgres-ecommerce:
+    image: postgres:17-alpine
+    container_name: postgres-ecommerce
+    ports:
+      - 5432:5432
+    networks:
+      - demo-ecommerce-net
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=demoecommerce
+      - POSTGRES_USER=demoecommerce
+      - POSTGRES_DB=demo_ecommerce_db

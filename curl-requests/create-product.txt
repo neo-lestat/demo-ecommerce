@@ -1,0 +1,12 @@
+curl --request POST \
+  --url http://localhost:8080/api/products \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: insomnia/2023.5.8' \
+  --header 'api-token: test' \
+  --data '{
+	"name":"chease cake",
+  "price": 10,
+	"stock": 40,
+  "imageUrl": "test",
+	"categoryId": 2
+}'

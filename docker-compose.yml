@@ -1,0 +1,46 @@
+
+networks:
+  demo-ecommerce-net:
+    driver: bridge
+
+services:
+  postgres-ecommerce:
+    image: postgres:17-alpine
+    container_name: postgres-ecommerce
+    ports:
+      - 5432:5432
+    networks:
+      - demo-ecommerce-net
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+#    healthcheck:
+#      test: "pg_isready --username=demoecommerce && psql --username=demoecommerce --list"
+#      interval: 5s
+#      timeout: 5s
+#      retries: 5
+    environment:
+      - POSTGRES_PASSWORD=demoecommerce
+      - POSTGRES_USER=demoecommerce
+      - POSTGRES_DB=demo_ecommerce_db
+
+  payment-gateway:
+    image: payment-gateway
+    container_name: payment-gateway
+    networks:
+      - demo-ecommerce-net
+    ports:
+      - 8081:8081
+
+
+  ecommerce-api:
+    image: ecommerce-api
+    container_name: ecommerce-api
+    networks:
+      - demo-ecommerce-net
+    ports:
+      - 8080:8080
+#    depends_on:
+#      postgres-ecommerce:
+#        condition: service_healthy
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
