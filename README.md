@@ -35,6 +35,4 @@ There is **swagger ui** at http://localhost:8080/swagger-ui/index.html available
 - I choose to organize the project by feature so each resource has its own package,
 - The model (jpa entities) has its own package
 - I added a simple filter as dummy security
-- I created payment-gateway as mock but i didn't undestand if it should be called
-  in somewhere in the order endpoints
 - Added some curl request to the endpoints, they could be imported in postman or similar client
