@@ -15,9 +15,6 @@ java {
 
 repositories {
 	mavenCentral()
-	/*maven {
-		url "http://nexus.services.odigeo.com/nexus/content/groups/public"
-	}*/
 }
 
 dependencies {
